@@ -16,8 +16,6 @@ def test_create_user():
   repo = UserRepository(mock_connection)
   response = repo.create_user(username, password)
   print(response)
-
-def test_get_user_by_username():
   user_id = 2
   mock_connection = db_connection_handler
   repo = UserRepository(mock_connection)
