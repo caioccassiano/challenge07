@@ -17,11 +17,11 @@ def test_create_user():
   response = repo.create_user(username, password)
   print(response)
 
-def test_get_user_by_id():
+def test_get_user_by_username():
   user_id = 2
   mock_connection = db_connection_handler
   repo = UserRepository(mock_connection)
-  response = repo.get_user_by_id(user_id)
+  response = repo.get_user_by_username(user_id)
   print(response)
   print()
   print(response.username)

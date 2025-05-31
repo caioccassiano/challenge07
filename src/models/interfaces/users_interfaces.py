@@ -9,7 +9,7 @@ class UserRepositoryInterface(ABC):
     pass
 
   @abstractmethod
-  def get_user_by_id(self, user_id:int)-> Optional[UserTable]:
+  def get_user_by_username(self, username:str)-> Optional[UserTable]:
     pass
 
 

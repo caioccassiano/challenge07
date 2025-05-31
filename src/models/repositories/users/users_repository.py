@@ -18,13 +18,13 @@ class UserRepository(UserRepositoryInterface):
         db.session.rollback()
         raise exception
       
-  def get_user_by_id(self, user_id):
+  def get_user_by_username(self, username):
     with self.__db_connection as db:
       try:
         user = (
           db.session
           .query(UserTable)
-          .filter(UserTable.id == user_id)
+          .filter(UserTable.username == username)
           
         ).first()
         return user
