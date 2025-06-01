@@ -1,6 +1,6 @@
 import jwt
 from datetime import datetime, timedelta, timezone
-from src.configs.jtw_infos import jwt_infos
+from src.configs.jwt_infos import jwt_infos
 
 class JwtHandler:
   def create_token (self, body: dict={})-> str:

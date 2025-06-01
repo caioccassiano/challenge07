@@ -16,7 +16,13 @@ class OrderRepository(OrderRepositoryInterface):
           description = description
         )
         db.session.add(order)
+        db.session.flush()
         db.session.commit()
+        return {
+                "id": order,
+                "user_id": order.user_id,
+                "description": order.description
+            }
 
       except Exception as exception:
         db.session.rollback()

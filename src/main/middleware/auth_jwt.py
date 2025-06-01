@@ -4,7 +4,7 @@ from src.drivers.jwt_handler import JwtHandler
 def auth_jwt_verify():
   jwt_handler = JwtHandler()
   raw_token = request.headers.get("Authorization")
-  user_id = request.headers("uid")
+  user_id = request.headers.get("uid")
 
   if not raw_token or not user_id:
     raise Exception("Invalid Auth informations")

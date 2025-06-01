@@ -25,8 +25,11 @@ class OrderCreateController(OrderCreateInterface):
     return {
       "new_order":{
         "status": "Accepted",
-        "attribute": new_order
+        "attribute": {
+          "user_id": new_order["user_id"],
+          "description": new_order["description"]
       }
+    }
     }
   
 

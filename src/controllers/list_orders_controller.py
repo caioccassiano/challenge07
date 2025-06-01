@@ -13,7 +13,15 @@ class OrderListerController(OrderListerInterface):
     return {
       "result":{
         "user_id": user_id,
-        "orders": orders
+        "orders": [
+          {
+            "id": order.id,
+            "description": order.description,
+            "created_at": order.created_at.isoformat()
+
+          }
+          for order in orders
+        ]
       }
     }
 

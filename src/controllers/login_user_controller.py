@@ -13,8 +13,8 @@ class LoginUserController(LoginUserInterface):
   def login(self, username, password)-> dict:
     self.__validate_body(username, password)
     user = self.__find_user(username=username)
-    user_id = user[0]
-    hashed_password = user[2]
+    user_id = user.id
+    hashed_password = user.password
     self.__validate_password(password, hashed_password)
     token = self.__create_access_token(user_id=user_id)
     return self.__format_response(username, token)

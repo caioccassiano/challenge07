@@ -6,3 +6,4 @@ jwt_infos = {
   "JWT_HOURS": os.getenv("JWT_HOURS")
 }
 
+print("JWT CONFIGS:", jwt_infos)

@@ -14,6 +14,10 @@ class UserRepository(UserRepositoryInterface):
         )
         db.session.add(user)
         db.session.commit()
+        return {
+          "id": user.id,
+          "username": user.username
+        }
       except Exception as exception:
         db.session.rollback()
         raise exception

@@ -12,8 +12,8 @@ class UserCreatorView(ViewInterface):
     password = http_request.body["password"]
 
     self.__validate_inputs(username, password)
-    view = self.__controller.create_user(username, password)
-    response = HttpResponse(body={"data": response}, status_code=201)
+    response = self.__controller.create_user(username, password)
+    return HttpResponse(body=response, status_code=201)
 
   def __validate_inputs(self, username, password)->None:
     if(
